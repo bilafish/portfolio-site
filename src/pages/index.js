@@ -4,17 +4,24 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import styled from "styled-components"
+
+const PageContainer = styled.div`
+  padding: 0 2rem;
+`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <PageContainer>
+      <SEO title="Home" />
+      <h1>Hey, I'm Jason.</h1>
+      <p>Front-End Web Developer</p>
+      <div style={{ fontSize: "72px", color: "#C8A8CA", maxWidth: "500px" }}>
+        I create web apps to solve real-world problems.
+      </div>
+      <br />
+      <Link to="/works/">Featured Works</Link>
+    </PageContainer>
   </Layout>
 )
 

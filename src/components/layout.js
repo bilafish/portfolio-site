@@ -8,9 +8,25 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 
 import Header from "./header"
-import "./layout.css"
+
+const StyledContainer = styled.div`
+  font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”, “Oxygen”,
+    “Ubuntu”, “Cantarell”, “Fira Sans”, “Droid Sans”, “Helvetica Neue”,
+    sans-serif;
+  background: #243184;
+  color: #fffefe;
+  height: 100vh;
+  padding: 0 1.5rem;
+`
+
+const StyledFooter = styled.footer`
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,23 +40,16 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+    <StyledContainer>
+      <Header />
+
+      <main>{children}</main>
+      <StyledFooter>
+        © {new Date().getFullYear()} Jason Zheng. Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">Gatsby</a>. All rights reserved.
+      </StyledFooter>
+    </StyledContainer>
   )
 }
 
