@@ -1,5 +1,4 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 // import Image from "../components/image"
@@ -12,7 +11,7 @@ const StyledHeader = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 1rem;
 `
 
 const Header = () => {
@@ -20,7 +19,7 @@ const Header = () => {
     query {
       placeholderImage: file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
-          fixed(width: 60, height: 60) {
+          fixed(width: 50, height: 50) {
             ...GatsbyImageSharpFixed
           }
         }

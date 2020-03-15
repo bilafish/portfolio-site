@@ -1,33 +1,96 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
+import Img from "gatsby-image"
 
 const PageContainer = styled.div`
   padding: 0 2rem;
 `
+const Content = styled.div`
+  display: flex;
+  flex-direction: row;
+  justifycontent: flex-start;
+  align-items: center;
+  @media (max-width: 980px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`
 
-const IndexPage = () => (
-  <Layout>
-    <PageContainer>
-      <SEO title="Home" />
-      <h1>Hey, I'm Jason.</h1>
-      <p>Front-End Web Developer</p>
-      <div
-        style={{
-          fontSize: "72px",
-          color: "#C8A8CA",
-          fontWeight: "600",
-          maxWidth: "500px",
-        }}
-      >
-        I create web apps to solve real-world problems.
-      </div>
-      <br />
-      <Link to="/works/">Featured Works</Link>
-    </PageContainer>
-  </Layout>
-)
+const HeroText = styled.div`
+  font-size: 72px;
+  color: #c8a8ca;
+  font-weight: 600;
+  max-width: 700px;
+  @media (max-width: 980px) {
+    font-size: 60px;
+  }
+`
+
+const Projects = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 5rem;
+  @media (max-width: 980px) {
+    margin-top: 2rem;
+    margin-left: 0rem;
+  }
+`
+
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "carpark-finder.png" }) {
+        childImageSharp {
+          fixed(width: 120, height: 120) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
+
+  return (
+    <Layout>
+      <PageContainer>
+        <SEO title="Home" />
+        <Content>
+          <div>
+            <h1>Hey, I'm Jason.</h1>
+            <p>Front-End Web Developer</p>
+            <HeroText>I create web apps to solve real-world problems.</HeroText>
+          </div>
+          <Projects>
+            <span style={{ color: "#61BABB", fontSize: "1.5em" }}>
+              {"Featured Works"}
+            </span>
+            <a
+              href="https://wheretopark.netlify.com/"
+              style={{ border: "none" }}
+            >
+              <div
+                style={{
+                  marginTop: "1rem",
+                  width: "180px",
+                  height: "180px",
+                  background: "#292929",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderRadius: "25px",
+                }}
+              >
+                <Img fixed={data.placeholderImage.childImageSharp.fixed} />
+              </div>
+            </a>
+          </Projects>
+        </Content>
+      </PageContainer>
+    </Layout>
+  )
+}
 
 export default IndexPage
