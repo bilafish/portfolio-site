@@ -3,7 +3,7 @@ module.exports = {
     title: `Jason Zheng - Front-End Developer`,
     description: `Personal portfolio site showcasing my works`,
     author: `Jason Zheng`,
-    // siteUrl: ``
+    siteUrl: `https://www.jasonzy.com`,
   },
   plugins: [
     `gatsby-plugin-netlify-cms`,
