@@ -7737,19 +7737,6 @@ fsevents@~2.1.1:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-google-analytics@npm:^2.1.37":
-  version: 2.1.37
-  resolution: "gatsby-plugin-google-analytics@npm:2.1.37"
-  dependencies:
-    "@babel/runtime": ^7.7.6
-  peerDependencies:
-    gatsby: ^2.0.0
-    react: ^16.4.2
-    react-dom: ^16.4.2
-  checksum: 2/3a8fca82f50c37e55db9e1f8e6d2cb5fcf4ade539c2f66e8ccc26c469c122c76dc41a4d4357c1681fb43bd3ba44d7bd3ebd0c8d53700d3dc962476aad8f74981
-  languageName: node
-  linkType: hard
-
 "gatsby-plugin-manifest@npm:^2.2.39":
   version: 2.2.39
   resolution: "gatsby-plugin-manifest@npm:2.2.39"
@@ -7914,33 +7901,6 @@ fsevents@~2.1.1:
   checksum: 2/a83a4e6f45bb707f72423d5a157ff002628f0d5627a112a821fc42cbae544957815560c241a6e598e9f070e00f7f7fccab37f484e596f0fdc66ba4af82e0c3f8
   languageName: node
   linkType: hard
-
-"gatsby-starter-default@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "gatsby-starter-default@workspace:."
-  dependencies:
-    babel-plugin-styled-components: ^1.10.7
-    gatsby: ^2.19.7
-    gatsby-image: ^2.2.39
-    gatsby-plugin-google-analytics: ^2.1.37
-    gatsby-plugin-manifest: ^2.2.39
-    gatsby-plugin-netlify-cms: ^4.1.41
-    gatsby-plugin-offline: ^3.0.32
-    gatsby-plugin-react-helmet: ^3.1.21
-    gatsby-plugin-sharp: ^2.4.3
-    gatsby-plugin-styled-components: ^3.1.20
-    gatsby-source-filesystem: ^2.1.46
-    gatsby-transformer-sharp: ^2.3.13
-    netlify-cms-app: ^2.11.28
-    prettier: ^1.19.1
-    prop-types: ^15.7.2
-    react: ^16.12.0
-    react-dom: ^16.12.0
-    react-helmet: ^5.2.1
-    react-is: ^16.13.0
-    styled-components: ^5.0.1
-  languageName: unknown
-  linkType: soft
 
 "gatsby-telemetry@npm:^1.1.47":
   version: 1.1.47
@@ -13912,6 +13872,32 @@ fsevents@~2.1.1:
   checksum: 2/0a88247699b733cfd6b2b2384068099c0a8ec23a59ff4acc0793f9fb2e51816344ec18d2ba3edfc83a7a6d0bcc76f1d2fb0b188e82160e46d8cae471ea26c001
   languageName: node
   linkType: hard
+
+"portfolio-site@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "portfolio-site@workspace:."
+  dependencies:
+    babel-plugin-styled-components: ^1.10.7
+    gatsby: ^2.19.7
+    gatsby-image: ^2.2.39
+    gatsby-plugin-manifest: ^2.2.39
+    gatsby-plugin-netlify-cms: ^4.1.41
+    gatsby-plugin-offline: ^3.0.32
+    gatsby-plugin-react-helmet: ^3.1.21
+    gatsby-plugin-sharp: ^2.4.3
+    gatsby-plugin-styled-components: ^3.1.20
+    gatsby-source-filesystem: ^2.1.46
+    gatsby-transformer-sharp: ^2.3.13
+    netlify-cms-app: ^2.11.28
+    prettier: ^1.19.1
+    prop-types: ^15.7.2
+    react: ^16.12.0
+    react-dom: ^16.12.0
+    react-helmet: ^5.2.1
+    react-is: ^16.13.0
+    styled-components: ^5.0.1
+  languageName: unknown
+  linkType: soft
 
 "posix-character-classes@npm:^0.1.0":
   version: 0.1.1

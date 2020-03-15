@@ -4,13 +4,13 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import Header from "./header"
+import { Helmet } from "react-helmet"
 
 const StyledContainer = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”, “Oxygen”,
@@ -41,8 +41,21 @@ const Layout = ({ children }) => {
 
   return (
     <StyledContainer>
+      <Helmet>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID}`}
+        />
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID}');
+          `}
+        </script>
+      </Helmet>
       <Header />
-
       <main>{children}</main>
       <StyledFooter>
         © {new Date().getFullYear()} Jason Zheng. Built with
