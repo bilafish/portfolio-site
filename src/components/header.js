@@ -2,7 +2,9 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import Image from "../components/image"
+// import Image from "../components/image"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const StyledHeader = styled.div`
   background: #243184;
@@ -10,25 +12,29 @@ const StyledHeader = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 0.75rem 2rem;
 `
 
-const Header = ({ siteTitle }) => (
-  <header>
-    <StyledHeader>
-      <div style={{ width: `128px` }}>
-        <Image />
-      </div>
-      <Link to="/works/">Works</Link>
-    </StyledHeader>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+const Header = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "logo.png" }) {
+        childImageSharp {
+          fixed(width: 60, height: 60) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
+  return (
+    <header>
+      <StyledHeader>
+        <Img fixed={data.placeholderImage.childImageSharp.fixed} />
+        <Link to="/works/">Works</Link>
+      </StyledHeader>
+    </header>
+  )
 }
 
 export default Header
