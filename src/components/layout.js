@@ -26,6 +26,12 @@ const StyledFooter = styled.footer`
   margin-bottom: 2rem;
 `
 
+const MainBody = styled.main`
+  @media (min-width: 980px) {
+    height: 75%;
+  }
+`
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -56,7 +62,7 @@ const Layout = ({ children }) => {
         </script>
       </Helmet>
       <Header />
-      <main>{children}</main>
+      <MainBody>{children}</MainBody>
       <StyledFooter>
         © {new Date().getFullYear()} Jason Zheng. Built with
         {` `}
