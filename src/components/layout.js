@@ -78,10 +78,15 @@ const Layout = ({ children }) => {
           <a
             href="https://www.linkedin.com/in/jyzheng"
             style={{ border: "none" }}
+            aria-label="Jason's LinkedIn"
           >
             <LinkedInIcon />
           </a>
-          <a href="https://github.com/bilafish" style={{ border: "none" }}>
+          <a
+            href="https://github.com/bilafish"
+            style={{ border: "none" }}
+            aria-label="Jason's Github"
+          >
             <GithubIcon />
           </a>
         </SocialMediaIcons>

@@ -59,7 +59,9 @@ const IndexPage = () => {
         <Content>
           <div>
             <h1>Hey, I'm Jason.</h1>
-            <p>Front-End Web Developer</p>
+            <p style={{ fontWeight: "300", fontSize: "1.2rem" }}>
+              Front-End Web Developer
+            </p>
             <HeroText>I create web apps to solve real-world problems.</HeroText>
           </div>
           <Projects>
@@ -69,6 +71,7 @@ const IndexPage = () => {
             <a
               href="https://wheretopark.netlify.com/"
               style={{ border: "none" }}
+              aria-label="Carpark Finder"
             >
               <div
                 style={{
