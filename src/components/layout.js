@@ -9,6 +9,8 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
+import LinkedInIcon from "../images/linkedin.svg"
+import GithubIcon from "../images/github.svg"
 import Header from "./header"
 import { Helmet } from "react-helmet"
 
@@ -28,8 +30,16 @@ const StyledFooter = styled.footer`
 
 const MainBody = styled.main`
   @media (min-width: 980px) {
-    height: 75%;
+    height: 70%;
   }
+`
+
+const SocialMediaIcons = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 4rem;
+  padding-bottom: 1rem;
 `
 
 const Layout = ({ children }) => {
@@ -64,10 +74,23 @@ const Layout = ({ children }) => {
       <Header />
       <MainBody>{children}</MainBody>
       <StyledFooter>
-        © {new Date().getFullYear()} Jason Zheng. Built with
-        {` `}
-        <Img fixed={data.placeholderImage.childImageSharp.fixed} /> {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>. All rights reserved.
+        <SocialMediaIcons>
+          <a
+            href="https://www.linkedin.com/in/jyzheng"
+            style={{ border: "none" }}
+          >
+            <LinkedInIcon />
+          </a>
+          <a href="https://github.com/bilafish" style={{ border: "none" }}>
+            <GithubIcon />
+          </a>
+        </SocialMediaIcons>
+        <div>
+          © {new Date().getFullYear()} Jason Zheng. Built with
+          {` `}
+          <Img fixed={data.placeholderImage.childImageSharp.fixed} /> {` `}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>. All rights reserved.
+        </div>
       </StyledFooter>
     </StyledContainer>
   )
