@@ -4,14 +4,24 @@ import styled from "styled-components"
 // import Image from "../components/image"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import Icon from "../images/email.svg"
 
 const StyledHeader = styled.div`
   background: #243184;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   padding: 0.75rem 1rem;
+`
+
+const Nav = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+  position: fixed;
+  right: 1rem;
 `
 
 const Header = () => {
@@ -30,7 +40,16 @@ const Header = () => {
     <header>
       <StyledHeader>
         <Img fixed={data.placeholderImage.childImageSharp.fixed} />
-        <Link to="/works/">Works</Link>
+        <Nav>
+          <Link to="/works/">Works</Link>
+          <a
+            href="mailto:jasonzhengyj@gmail.com"
+            role="button"
+            style={{ border: "none" }}
+          >
+            <Icon />
+          </a>
+        </Nav>
       </StyledHeader>
     </header>
   )
