@@ -7,6 +7,12 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-netlify-cms`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/admin`],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
