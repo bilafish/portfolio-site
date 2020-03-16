@@ -45,6 +45,7 @@ const Header = () => {
           <a
             href="mailto:jasonzhengyj@gmail.com"
             role="button"
+            aria-label="Email Jason at jasonzhengyj@gmail.com"
             style={{ border: "none" }}
           >
             <Icon />
