@@ -1,18 +1,33 @@
 backend:
   name: github
   repo: bilafish/portfolio-site
+  branch: master
+  commit_messages:
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "Upload asset “{{path}}”"
+    deleteMedia: "Delete asset “{{path}}”"
 
 media_folder: static/assets
-public_folder: assets
+public_folder: /assets
 
 collections:
   - name: project
     label: Project
-    folder: content/projects
+    folder: "src/pages/works"
     create: true
+    slug: "{{slug}}"
     fields:
-      - { name: path, label: Path }
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "project-page",
+        }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: description, label: Description }
+      - { label: "Project Thumbnail", name: "projectthumbnail", widget: image }
       - { name: body, label: Body, widget: markdown }
+      - { label: "Tags", name: "tags", widget: "list" }
