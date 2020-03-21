@@ -1,9 +1,8 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import ProjectsGrid from "../components/projectsGrid"
 import styled from "styled-components"
-import Img from "gatsby-image"
 
 const PageContainer = styled.div`
   padding: 0 2rem;
@@ -40,18 +39,6 @@ const Projects = styled.div`
 `
 
 const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "carpark-finder.png" }) {
-        childImageSharp {
-          fixed(width: 120, height: 120) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <Layout>
       <PageContainer>
@@ -68,27 +55,7 @@ const IndexPage = () => {
             <span style={{ color: "#61BABB", fontSize: "1.5em" }}>
               {"Featured Works"}
             </span>
-            <a
-              href="https://wheretopark.netlify.com/"
-              style={{ border: "none" }}
-              aria-label="Carpark Finder"
-            >
-              <div
-                style={{
-                  marginTop: "1rem",
-                  width: "180px",
-                  height: "180px",
-                  background: "#292929",
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  borderRadius: "25px",
-                }}
-              >
-                <Img fixed={data.placeholderImage.childImageSharp.fixed} />
-              </div>
-            </a>
+            <ProjectsGrid />
           </Projects>
         </Content>
       </PageContainer>

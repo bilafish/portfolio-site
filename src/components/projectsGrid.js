@@ -1,7 +1,8 @@
 import React from "react"
+import Img from "gatsby-image"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
-export default ProjectsGrid = () => {
+const ProjectsGrid = () => {
   const data = useStaticQuery(graphql`
     query ProjectsQuery {
       allMarkdownRemark(
@@ -16,13 +17,50 @@ export default ProjectsGrid = () => {
             }
             frontmatter {
               title
-              projectthumbnail
+              projectthumbnail {
+                childImageSharp {
+                  fluid(maxWidth: 120, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
           }
         }
       }
     }
   `)
-  console.log(data)
-  return <h1>Hello</h1>
+  const { edges: projects } = data.allMarkdownRemark
+  // console.log(projects)
+  return (
+    <div>
+      {projects &&
+        projects.map(({ node: project }) => (
+          <div
+            style={{
+              marginTop: "1rem",
+              width: "180px",
+              height: "180px",
+              background: "#292929",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: "25px",
+            }}
+          >
+            <div style={{ width: "120px", height: "120px" }}>
+              <Img
+                fluid={
+                  project.frontmatter.projectthumbnail.childImageSharp.fluid
+                }
+                alt="carpark finder"
+              />
+            </div>
+          </div>
+        ))}
+    </div>
+  )
 }
+
+export default ProjectsGrid

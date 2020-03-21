@@ -14,7 +14,7 @@ const ProjectPage = ({ data }) => {
 export default ProjectPage
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
+  query ProjectPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
