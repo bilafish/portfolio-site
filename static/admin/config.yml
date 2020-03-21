@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: bilafish/portfolio-site
-  branch: develop
+  branch: master
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"
     update: "Update {{collection}} “{{slug}}”"
@@ -10,14 +10,14 @@ backend:
     deleteMedia: "Delete asset “{{path}}”"
 
 media_folder: static/assets
-public_folder: assets
+public_folder: /assets
 
 collections:
   - name: project
     label: Project
     folder: "src/pages/works"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - {
           label: "Template Key",
