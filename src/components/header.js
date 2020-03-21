@@ -39,7 +39,9 @@ const Header = () => {
   return (
     <header>
       <StyledHeader>
-        <Img fixed={data.placeholderImage.childImageSharp.fixed} />
+        <Link to="/" style={{ border: "none" }}>
+          <Img fixed={data.placeholderImage.childImageSharp.fixed} />
+        </Link>
         <Nav>
           <Link to="/works/">Works</Link>
           <a

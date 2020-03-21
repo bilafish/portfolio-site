@@ -36,28 +36,30 @@ const ProjectsGrid = () => {
     <div>
       {projects &&
         projects.map(({ node: project }) => (
-          <div
-            style={{
-              marginTop: "1rem",
-              width: "180px",
-              height: "180px",
-              background: "#292929",
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: "25px",
-            }}
-          >
-            <div style={{ width: "120px", height: "120px" }}>
-              <Img
-                fluid={
-                  project.frontmatter.projectthumbnail.childImageSharp.fluid
-                }
-                alt="carpark finder"
-              />
+          <Link to={project.fields.slug}>
+            <div
+              style={{
+                marginTop: "1rem",
+                width: "180px",
+                height: "180px",
+                background: "#292929",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: "25px",
+              }}
+            >
+              <div style={{ width: "120px", height: "120px" }}>
+                <Img
+                  fluid={
+                    project.frontmatter.projectthumbnail.childImageSharp.fluid
+                  }
+                  alt="carpark finder"
+                />
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
     </div>
   )
