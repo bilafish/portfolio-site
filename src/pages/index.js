@@ -53,7 +53,7 @@ const IndexPage = () => {
           </div>
           <Projects>
             <span style={{ color: "#61BABB", fontSize: "1.5em" }}>
-              {"Featured Works"}
+              {"Featured Work"}
             </span>
             <ProjectsGrid />
           </Projects>
