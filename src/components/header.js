@@ -43,7 +43,7 @@ const Header = () => {
           <Img fixed={data.placeholderImage.childImageSharp.fixed} />
         </Link>
         <Nav>
-          <Link to="/works/">Works</Link>
+          <Link to="/works/">Work</Link>
           <a
             href="mailto:jasonzhengyj@gmail.com"
             role="button"

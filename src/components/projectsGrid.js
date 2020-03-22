@@ -2,6 +2,7 @@ import React from "react"
 import Img from "gatsby-image"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
+// A simple component to render a grid of project thumbnails on my main page
 const ProjectsGrid = () => {
   const data = useStaticQuery(graphql`
     query ProjectsQuery {
