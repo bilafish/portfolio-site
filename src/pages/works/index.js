@@ -18,8 +18,9 @@ const SecondPage = () => (
     <SEO title="Work" />
     <Content>
       <div>
-        <h1 style={{ color: "#61BABB" }}>Here's a selection of projects </h1>
-        <h1 style={{ color: "#61BABB" }}>that I've been working on recently</h1>
+        <h1 style={{ color: "#61BABB", maxWidth: "500px" }}>
+          Here's a selection of projects that I've been working on recently
+        </h1>
         <span style={{ lineHeight: "2rem" }}>
           For even fresher work, you can check out the latest repos on my{" "}
           <GithubIcon /> <a href="https://github.com/bilafish">Github</a>.
