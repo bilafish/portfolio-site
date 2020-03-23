@@ -29,5 +29,24 @@ collections:
       - { name: title, label: Title }
       - { name: description, label: Description }
       - { label: "Project Thumbnail", name: "projectthumbnail", widget: image }
+      - {
+          label: "Website URL",
+          name: "weburl",
+          widget: string,
+          required: false,
+        }
+      - {
+          label: "Github Repo",
+          name: "githubrepo",
+          widget: string,
+          required: false,
+        }
+      - {
+          label: "Screenshots Gallery",
+          name: "screenshots",
+          widget: "list",
+          field: { label: Screenshot, name: screen, widget: image },
+          required: false,
+        }
       - { name: body, label: Body, widget: markdown }
       - { label: "Tags", name: "tags", widget: "list" }
