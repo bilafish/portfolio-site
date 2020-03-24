@@ -6,6 +6,10 @@ description: >-
   A React application to help drivers find nearby carparks with available
   parking lots.
 projectthumbnail: /assets/carpark-finder.png
+weburl: 'https://wheretopark.netlify.com/'
+githubrepo: 'https://github.com/bilafish/carpark-finder'
+screenshots:
+  - /assets/wheretopark-1-.png
 tags:
   - React
 ---
