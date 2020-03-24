@@ -11,6 +11,10 @@ const ProjectContent = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   padding: 0 2rem;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
 `
 
 const ExternalLinks = styled.div`
