@@ -95,7 +95,11 @@ const ProjectPage = ({ data }) => {
               </a>
             )}
           </ExternalLinks>
-          <p style={{ padding: "1rem 0" }}>{post.frontmatter.description}</p>
+          <p
+            style={{ padding: "1rem 0", lineHeight: "2rem", maxWidth: "400px" }}
+          >
+            {post.frontmatter.description}
+          </p>
         </section>
         <section>
           {post.frontmatter.screenshots &&
