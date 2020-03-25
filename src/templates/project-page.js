@@ -13,8 +13,16 @@ const ProjectContent = styled.div`
   padding: 0 2rem;
   @media (max-width: 700px) {
     flex-direction: column;
+    align-items: center;
     padding: 0 1rem;
   }
+`
+
+const Header = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
 `
 
 const ExternalLinks = styled.div`
@@ -36,14 +44,39 @@ const GithubBadge = styled(Badge)`
   width: 9rem;
 `
 
+const Screenshot = styled.div`
+  width: 250px;
+  @media (max-width: 700px) {
+    width: 200px;
+  }
+`
+
 const ProjectPage = ({ data }) => {
   const { markdownRemark: post } = data
   return (
     <Layout>
       <ProjectContent>
         <section>
-          <h1>{post.frontmatter.title}</h1>
-
+          <Header>
+            <div
+              style={{
+                marginRight: "1rem",
+                width: "60px",
+                height: "60px",
+                background: "#292929",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: "1rem",
+              }}
+            >
+              <Img
+                fixed={post.frontmatter.projectthumbnail.childImageSharp.fixed}
+              />
+            </div>
+            <h1>{post.frontmatter.title}</h1>
+          </Header>
           <ExternalLinks>
             {post.frontmatter.weburl && (
               <a href={post.frontmatter.weburl} style={{ border: "none" }}>
@@ -62,14 +95,14 @@ const ProjectPage = ({ data }) => {
               </a>
             )}
           </ExternalLinks>
-          <p>{post.frontmatter.description}</p>
+          <p style={{ padding: "1rem 0" }}>{post.frontmatter.description}</p>
         </section>
         <section>
           {post.frontmatter.screenshots &&
             post.frontmatter.screenshots.map(image => (
-              <div style={{ width: "250px" }}>
+              <Screenshot>
                 <Img fluid={image.childImageSharp.fluid} />
-              </div>
+              </Screenshot>
             ))}
         </section>
       </ProjectContent>
@@ -91,6 +124,13 @@ export const pageQuery = graphql`
         githubrepo
         weburl
         tags
+        projectthumbnail {
+          childImageSharp {
+            fixed(width: 50, height: 50) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
         screenshots {
           childImageSharp {
             fluid(maxWidth: 250, quality: 100) {
