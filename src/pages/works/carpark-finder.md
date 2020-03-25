@@ -9,7 +9,7 @@ projectthumbnail: /assets/carpark-finder.png
 weburl: 'https://wheretopark.netlify.com/'
 githubrepo: 'https://github.com/bilafish/carpark-finder'
 screenshots:
-  - /assets/wheretopark-1-.png
+  - /assets/carpark-finder-iphone8-spacegray.png
 tags:
   - React
 ---
