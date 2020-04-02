@@ -8,7 +8,7 @@ description: >-
   drivers can easily view the available parking lots in respective carparks on
   the fly.
 projectthumbnail: /assets/carpark-finder.png
-weburl: 'https://wheretopark.netlify.com/'
+weburl: 'https://wheretopark.netlify.app/'
 githubrepo: 'https://github.com/bilafish/carpark-finder'
 screenshots:
   - /assets/carpark-finder-iphone8-spacegray.png
