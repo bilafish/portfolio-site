@@ -25,6 +25,7 @@ const ProjectsGrid = () => {
                   }
                 }
               }
+              thumbnailbgcolour
             }
           }
         }
@@ -43,7 +44,7 @@ const ProjectsGrid = () => {
                 marginTop: "1rem",
                 width: "180px",
                 height: "180px",
-                background: "#292929",
+                background: project.frontmatter.thumbnailbgcolour,
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "center",
