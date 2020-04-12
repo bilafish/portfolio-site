@@ -6,6 +6,7 @@ description: >-
   Reading & writing of NFC tags made possible on a web application using the
   experimental Web NFC API developed by Google Chrome.
 projectthumbnail: /assets/webnfc-logo.png
+thumbnailbgcolour: '#f7f7f5'
 weburl: 'https://webnfc.now.sh'
 githubrepo: 'https://github.com/bilafish/nfc-reader'
 screenshots:
