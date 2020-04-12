@@ -33,7 +33,6 @@ collections:
           label: "Project Thumbnail Background Colour",
           name: "thumbnailbgcolour",
           widget: string,
-          required: false,
         }
       - {
           label: "Website URL",
@@ -54,5 +53,5 @@ collections:
           field: { label: Screenshot, name: screen, widget: image },
           required: false,
         }
-      - { name: body, label: Body, widget: markdown }
+      - { name: body, label: Body, widget: markdown, required: false }
       - { label: "Tags", name: "tags", widget: "list" }
