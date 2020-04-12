@@ -63,7 +63,7 @@ const ProjectPage = ({ data }) => {
                 marginRight: "1rem",
                 width: "60px",
                 height: "60px",
-                background: "#292929",
+                background: post.frontmatter.thumbnailbgcolour,
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "center",
@@ -103,7 +103,7 @@ const ProjectPage = ({ data }) => {
         </section>
         <section>
           {post.frontmatter.screenshots &&
-            post.frontmatter.screenshots.map(image => (
+            post.frontmatter.screenshots.map((image) => (
               <Screenshot>
                 <Img fluid={image.childImageSharp.fluid} />
               </Screenshot>
@@ -135,6 +135,7 @@ export const pageQuery = graphql`
             }
           }
         }
+        thumbnailbgcolour
         screenshots {
           childImageSharp {
             fluid(maxWidth: 250, quality: 100) {

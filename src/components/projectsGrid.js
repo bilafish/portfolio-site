@@ -1,6 +1,15 @@
 import React from "react"
 import Img from "gatsby-image"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
+
+const StyledGrid = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  a {
+    border: none;
+  }
+`
 
 // A simple component to render a grid of project thumbnails on my main page
 const ProjectsGrid = () => {
@@ -25,6 +34,7 @@ const ProjectsGrid = () => {
                   }
                 }
               }
+              thumbnailbgcolour
             }
           }
         }
@@ -34,16 +44,17 @@ const ProjectsGrid = () => {
   const { edges: projects } = data.allMarkdownRemark
   // console.log(projects)
   return (
-    <div>
+    <StyledGrid>
       {projects &&
         projects.map(({ node: project }) => (
           <Link to={project.fields.slug}>
             <div
               style={{
                 marginTop: "1rem",
+                marginRight: "1rem",
                 width: "180px",
                 height: "180px",
-                background: "#292929",
+                background: project.frontmatter.thumbnailbgcolour,
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "center",
@@ -62,7 +73,7 @@ const ProjectsGrid = () => {
             </div>
           </Link>
         ))}
-    </div>
+    </StyledGrid>
   )
 }
 
