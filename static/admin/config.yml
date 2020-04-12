@@ -30,6 +30,12 @@ collections:
       - { name: description, label: Description }
       - { label: "Project Thumbnail", name: "projectthumbnail", widget: image }
       - {
+          label: "Project Thumbnail Background Colour",
+          name: "thumbnailbgcolour",
+          widget: string,
+          required: false,
+        }
+      - {
           label: "Website URL",
           name: "weburl",
           widget: string,
